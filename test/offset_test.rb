@@ -1,9 +1,16 @@
 require_relative 'test_helper'
 
-class OffsetClass < Minitest::Test
+class OffsetTest < Minitest::Test
+
+  def setup
+    @offset = Offset.new("040895")
+  end
 
   def test_it_exists
-    offset = Offset.new("040895")
-    assert_instance_of Offset, offset
+    assert_instance_of Offset, @offset
+  end
+
+  def test_it_has_date
+    assert_equal 040895, @offset.date
   end
 end
