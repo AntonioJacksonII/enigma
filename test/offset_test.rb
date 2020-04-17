@@ -17,4 +17,9 @@ class OffsetTest < Minitest::Test
   def test_square_date
     assert_equal 1672401025, @offset.square_date
   end
+
+  def test_create_offsets
+    result = {A: 1, B: 0, C: 2, D: 5}
+    assert_equal result, @offset.create_offsets
+  end
 end
