@@ -16,7 +16,7 @@ class KeyTest < Minitest::Test
 
   def test_create_keys
     result = {
-              A: 02,
+              A: 2,
               B: 27,
               C: 71,
               D: 15
