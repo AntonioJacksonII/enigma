@@ -1,9 +1,9 @@
 require_relative 'test_helper'
 
-class EncryptTest < Minitest::Test
+class EncodeTest < Minitest::Test
 
   def test_it_exists
-    encrypt = Encrypt.new(message, key, date)
-    assert_instance_of Encrypt, encrypt
+    encrypt = Encode.new("hello world", "02715", "040895")
+    assert_instance_of Encode, encrypt
   end
 end
