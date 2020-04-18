@@ -10,4 +10,8 @@ class Encode
   def character_set
     ("a".."z").to_a << " "
   end
+
+  def keys
+    Key.new(key).create_keys
+  end
 end

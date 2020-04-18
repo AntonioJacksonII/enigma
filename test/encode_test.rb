@@ -20,4 +20,9 @@ class EncodeTest < Minitest::Test
     result = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "]
     assert_equal result, @encode.character_set
   end
+
+  def test_keys
+    result = { A: 2, B: 27, C: 71, D: 15}
+    assert_equal result, @encode.keys
+  end
 end
