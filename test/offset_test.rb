@@ -14,6 +14,12 @@ class OffsetTest < Minitest::Test
     assert_equal "040895", @offset.date
   end
 
+  def test_random_date_attribute
+    offset = Offset.new
+    assert_instance_of String, offset.date
+    assert_equal 6, offset.date.length
+  end
+
   def test_square_date
     assert_equal 1672401025, @offset.square_date
   end
