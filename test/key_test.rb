@@ -14,4 +14,14 @@ class KeyTest < Minitest::Test
     assert_equal "02715", @key.key
   end
 
+  def test_create_keys
+    result = {
+              A: 02,
+              B: 27,
+              C: 71,
+              D: 15
+            }
+    assert_equal result, @key.create_keys
+  end
+
 end
