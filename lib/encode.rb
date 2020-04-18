@@ -14,4 +14,8 @@ class Encode
   def keys
     Key.new(key).create_keys
   end
+
+  def offsets
+    Offset.new(date).create_offsets
+  end
 end

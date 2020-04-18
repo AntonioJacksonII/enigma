@@ -25,4 +25,14 @@ class EncodeTest < Minitest::Test
     result = { A: 2, B: 27, C: 71, D: 15}
     assert_equal result, @encode.keys
   end
+
+  def test_offsets
+    result = {A: 1, B: 0, C: 2, D: 5}
+    assert_equal result, @encode.offsets
+  end
+
+  def test_encrypt_message
+    result = "keder ohulw"
+    assert_equal result, @encode.encrypt_message
+  end
 end
