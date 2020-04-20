@@ -83,4 +83,10 @@ class Message
       encryption: encrypt_message, key: @key, date: @date
     }
   end
+
+  def decrypt
+    {
+      decryption: decrypt_message, key: @key, date: @date
+    }
+  end
 end
