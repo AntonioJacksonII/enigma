@@ -17,8 +17,7 @@ class KeyTest < Minitest::Test
   def test_create_keys
     result = { A: 2, B: 27, C: 71, D: 15}
     assert_equal result, @key.create_keys
-    key = Key.new
-    key.stubs(:key).returns("00001")
+    key = Key.new("00001")
     result2 = { A: 0, B: 0, C: 0, D: 1}
     assert_equal result2, key.create_keys
   end
