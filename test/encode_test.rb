@@ -32,12 +32,11 @@ class EncodeTest < Minitest::Test
   end
 
   def test_shifts
-    result = {A: 3, B: 27, C: 73, D: 20}
+    result = {A: 3, B: 0, C: 19, D: 20}
     assert_equal result, @encode.shifts
   end
 
   def test_encrypt_message
-    skip
     result = "keder ohulw"
     assert_equal result, @encode.encrypt_message
   end
