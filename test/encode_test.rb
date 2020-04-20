@@ -52,4 +52,9 @@ class EncodeTest < Minitest::Test
     result2 = "ki!"
     assert_equal result2, encode2.encrypt_message
   end
+
+  def test_decrypt_message
+    result = "hello world"
+    assert_equal result, @decode.decrypt_message
+  end
 end
