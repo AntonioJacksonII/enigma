@@ -1,15 +1,15 @@
 require_relative 'test_helper'
 
-class EncodeTest < Minitest::Test
+class MessageTest < Minitest::Test
 
   def setup
-    @encode = Encode.new("HELLO WORLD", "02715", "040895")
-    @decode = Encode.new("keder ohulw", "02715", "040895")
+    @encode = Message.new("HELLO WORLD", "02715", "040895")
+    @decode = Message.new("keder ohulw", "02715", "040895")
   end
 
   def test_it_exists
-    assert_instance_of Encode, @encode
-    assert_instance_of Encode, @decode
+    assert_instance_of Message, @encode
+    assert_instance_of Message, @decode
   end
 
   def test_it_has_attributes
@@ -48,7 +48,7 @@ class EncodeTest < Minitest::Test
   def test_encrypt_message
     result = "keder ohulw"
     assert_equal result, @encode.encrypt_message
-    encode2 = Encode.new("HI!", "02715", "040895")
+    encode2 = Message.new("HI!", "02715", "040895")
     result2 = "ki!"
     assert_equal result2, encode2.encrypt_message
   end
@@ -56,7 +56,7 @@ class EncodeTest < Minitest::Test
   def test_decrypt_message
     result = "hello world"
     assert_equal result, @decode.decrypt_message
-    decode2 = Encode.new("KI!", "02715", "040895")
+    decode2 = Message.new("KI!", "02715", "040895")
     assert_equal "hi!", decode2.decrypt_message
   end
 end

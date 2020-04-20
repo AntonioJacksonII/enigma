@@ -1,4 +1,4 @@
-class Encode
+class Message
   attr_reader :message, :key, :date
 
   def initialize(message, key, date)
