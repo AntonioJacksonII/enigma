@@ -56,5 +56,7 @@ class EncodeTest < Minitest::Test
   def test_decrypt_message
     result = "hello world"
     assert_equal result, @decode.decrypt_message
+    decode2 = Encode.new("KI!", "02715", "040895")
+    assert_equal "hi!", decode2.decrypt_message
   end
 end
