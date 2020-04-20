@@ -36,6 +36,7 @@ class EncodeTest < Minitest::Test
   def test_offsets
     result = {A: 1, B: 0, C: 2, D: 5}
     assert_equal result, @encode.offsets
+    assert_equal result, @decode.offsets
   end
 
   def test_shifts
