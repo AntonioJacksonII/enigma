@@ -30,6 +30,7 @@ class EncodeTest < Minitest::Test
   def test_keys
     result = { A: 2, B: 27, C: 71, D: 15}
     assert_equal result, @encode.keys
+    assert_equal result, @decode.keys
   end
 
   def test_offsets
