@@ -64,4 +64,9 @@ class MessageTest < Minitest::Test
     result = {encryption: "keder ohulw", key: "02715", date: "040895"}
     assert_equal result, @encode.encrypt
   end
+
+  def test_decrypt
+    result = {decryption: "hello world", key: "02715", date: "040895"}
+    assert_equal result, @decode.decrypt
+  end
 end
