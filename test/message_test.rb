@@ -51,6 +51,11 @@ class MessageTest < Minitest::Test
     assert_equal result, @decode.shifts
   end
 
+  def test_split_message
+    result = ["h","e","l","l","o", " ","w","o","r","l","d"]
+    assert_equal result, @encode.split_message
+  end
+
   def test_encrypt_message
     result = "keder ohulw"
     assert_equal result, @encode.encrypt_message
