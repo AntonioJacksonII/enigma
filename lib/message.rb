@@ -42,8 +42,11 @@ class Message
     final_shifts
   end
 
+  def split_message
+    @message.downcase.split(//)
+  end
+
   def encrypt_message
-    split_message = @message.downcase.split(//)
     encrypted_message = []
     counter = 0
     split_message.each do |character|
