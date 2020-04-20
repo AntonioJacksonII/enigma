@@ -6,4 +6,8 @@ class Decode
     @key = key
     @date = date
   end
+
+  def character_set
+    ("a".."z").to_a << " "
+  end
 end

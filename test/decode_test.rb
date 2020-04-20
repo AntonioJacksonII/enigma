@@ -15,4 +15,9 @@ class DecodeTest < Minitest::Test
     assert_equal "02715", @decode.key
     assert_equal "040895", @decode.date
   end
+
+  def test_character_set
+    result = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "]
+    assert_equal result, @decode.character_set
+  end
 end
