@@ -16,6 +16,10 @@ class EncodeTest < Minitest::Test
     assert_equal "HELLO WORLD", @encode.message
     assert_equal "02715", @encode.key
     assert_equal "040895", @encode.date
+
+    assert_equal "keder ohulw", @decode.message
+    assert_equal "02715", @decode.key
+    assert_equal "040895", @decode.date
   end
 
   def test_character_set
