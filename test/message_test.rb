@@ -22,9 +22,9 @@ class MessageTest < Minitest::Test
     assert_equal "040895", @decode.date
   end
 
-  def test_character_set
+  def test_characters
     result = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "]
-    assert_equal result, @encode.character_set
+    assert_equal result, @encode.characters
   end
 
   def test_keys
@@ -39,10 +39,23 @@ class MessageTest < Minitest::Test
     assert_equal result, @decode.offsets
   end
 
+  def test_initial_shifts
+    result = {A: 3, B: 27, C: 73, D: 20}
+    assert_equal result, @encode.initial_shifts
+    assert_equal result, @decode.initial_shifts
+  end
+
   def test_shifts
     result = {A: 3, B: 0, C: 19, D: 20}
     assert_equal result, @encode.shifts
     assert_equal result, @decode.shifts
+  end
+
+  def test_split_message
+    result = ["h","e","l","l","o", " ","w","o","r","l","d"]
+    assert_equal result, @encode.split_message
+    result2 = ["k","e","d","e","r"," ","o","h","u","l","w"]
+    assert_equal result2, @decode.split_message
   end
 
   def test_encrypt_message
