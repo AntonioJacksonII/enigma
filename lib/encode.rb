@@ -2,7 +2,7 @@ class Encode
   attr_reader :message, :key, :date
 
   def initialize(message, key, date)
-    @message = message.downcase
+    @message = message
     @key = key
     @date = date
   end
@@ -37,7 +37,7 @@ class Encode
   end
 
   def encrypt_message
-    split_message = @message.split(//)
+    split_message = @message.downcase.split(//)
     encrypted_message = []
     counter = 0
     split_message.each do |character|

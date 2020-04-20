@@ -11,7 +11,7 @@ class EncodeTest < Minitest::Test
   end
 
   def test_it_has_attributes
-    assert_equal "hello world", @encode.message
+    assert_equal "HELLO WORLD", @encode.message
     assert_equal "02715", @encode.key
     assert_equal "040895", @encode.date
   end
