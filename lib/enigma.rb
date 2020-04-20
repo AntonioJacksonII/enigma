@@ -1,3 +1,5 @@
+require_relative 'message'
+
 class Enigma
 
   def encrypt(message, key=rand(100000).to_s.rjust(5,'0'), date=Date.today.strftime("%m%d%y"))
