@@ -42,6 +42,7 @@ class EncodeTest < Minitest::Test
   def test_shifts
     result = {A: 3, B: 0, C: 19, D: 20}
     assert_equal result, @encode.shifts
+    assert_equal result, @decode.shifts
   end
 
   def test_encrypt_message
