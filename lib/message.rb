@@ -47,43 +47,43 @@ class Message
   end
 
   def encrypt_message
-    encrypted_message = []
+    encryption = []
     counter = 0
     split_message.each do |character|
       if characters.include?(character) == false
-        encrypted_message << character
+        encryption << character
       elsif counter == 0 || counter % 4 == 0
-        encrypted_message << characters[characters.index(character) - (27 - shifts[:A])]
+        encryption << characters[characters.index(character) - (27 - shifts[:A])]
       elsif counter == 1 || counter % 4 == 1
-        encrypted_message << characters[characters.index(character) - (27 - shifts[:B])]
+        encryption << characters[characters.index(character) - (27 - shifts[:B])]
       elsif counter == 2 || counter % 4 == 2
-        encrypted_message << characters[characters.index(character) - (27 - shifts[:C])]
+        encryption << characters[characters.index(character) - (27 - shifts[:C])]
       elsif counter == 3 || counter % 4 == 3
-        encrypted_message << characters[characters.index(character) - (27 - shifts[:D])]
+        encryption << characters[characters.index(character) - (27 - shifts[:D])]
       end
       counter += 1
     end
-    encrypted_message.join
+    encryption.join
   end
 
   def decrypt_message
-    decrypted_message = []
+    decryption = []
     counter = 0
     split_message.each do |character|
       if characters.include?(character) == false
-        decrypted_message << character
+        decryption << character
       elsif counter == 0 || counter % 4 == 0
-        decrypted_message << characters[characters.index(character) - shifts[:A]]
+        decryption << characters[characters.index(character) - shifts[:A]]
       elsif counter == 1 || counter % 4 == 1
-        decrypted_message << characters[characters.index(character) - shifts[:B]]
+        decryption << characters[characters.index(character) - shifts[:B]]
       elsif counter == 2 || counter % 4 == 2
-        decrypted_message << characters[characters.index(character) - shifts[:C]]
+        decryption << characters[characters.index(character) - shifts[:C]]
       elsif counter == 3 || counter % 4 == 3
-        decrypted_message << characters[characters.index(character) - shifts[:D]]
+        decryption << characters[characters.index(character) - shifts[:D]]
       end
       counter += 1
     end
-    decrypted_message.join
+    decryption.join
   end
 
   def encrypt
