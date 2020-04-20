@@ -10,7 +10,7 @@ class Message
     @date = date
   end
 
-  def character_set
+  def characters
     ("a".."z").to_a << " "
   end
 
@@ -50,16 +50,16 @@ class Message
     encrypted_message = []
     counter = 0
     split_message.each do |character|
-      if character_set.include?(character) == false
+      if characters.include?(character) == false
         encrypted_message << character
       elsif counter == 0 || counter % 4 == 0
-        encrypted_message << character_set[character_set.index(character) - (27 - shifts[:A])]
+        encrypted_message << characters[characters.index(character) - (27 - shifts[:A])]
       elsif counter == 1 || counter % 4 == 1
-        encrypted_message << character_set[character_set.index(character) - (27 - shifts[:B])]
+        encrypted_message << characters[characters.index(character) - (27 - shifts[:B])]
       elsif counter == 2 || counter % 4 == 2
-        encrypted_message << character_set[character_set.index(character) - (27 - shifts[:C])]
+        encrypted_message << characters[characters.index(character) - (27 - shifts[:C])]
       elsif counter == 3 || counter % 4 == 3
-        encrypted_message << character_set[character_set.index(character) - (27 - shifts[:D])]
+        encrypted_message << characters[characters.index(character) - (27 - shifts[:D])]
       end
       counter += 1
     end
