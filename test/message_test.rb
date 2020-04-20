@@ -39,6 +39,12 @@ class MessageTest < Minitest::Test
     assert_equal result, @decode.offsets
   end
 
+  def test_initial_shifts
+    result = {A: 3, B: 27, C: 73, D: 20}
+    assert_equal result, @encode.initial_shifts
+    assert_equal result, @decode.initial_shifts
+  end
+
   def test_shifts
     result = {A: 3, B: 0, C: 19, D: 20}
     assert_equal result, @encode.shifts
