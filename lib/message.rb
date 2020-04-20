@@ -22,13 +22,16 @@ class Message
     Offset.new(@date).create_offsets
   end
 
-  def shifts
-    initial_shifts = {
+  def initial_shifts
+    {
       A: keys[:A] + offsets[:A],
       B: keys[:B] + offsets[:B],
       C: keys[:C] + offsets[:C],
       D: keys[:D] + offsets[:D]
     }
+  end
+
+  def shifts
     final_shifts = {}
     initial_shifts.each do |letter, shift|
       until shift < 27
