@@ -14,6 +14,8 @@ class OffsetTest < Minitest::Test
 
   def test_it_has_date
     assert_equal "040895", @offset.date
+    @offset2.stubs(:today).returns(Date.new(2020, 04, 20))
+    assert_equal "042020", @offset2.date
   end
 
   def test_random_date_attribute
