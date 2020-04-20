@@ -4,10 +4,12 @@ class EncodeTest < Minitest::Test
 
   def setup
     @encode = Encode.new("HELLO WORLD", "02715", "040895")
+    @decode = Encode.new("keder ohulw", "02715", "040895")
   end
 
   def test_it_exists
     assert_instance_of Encode, @encode
+    assert_instance_of Encode, @decode
   end
 
   def test_it_has_attributes
